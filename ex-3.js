@@ -1,6 +1,6 @@
 const nestedObject = {
-  undef: undefined,
-  nul: null,
+  undefine: undefined,
+  null: null,
   data: {
     info: {
       stuff: {
@@ -32,3 +32,4 @@ function contains(object, value) {
   }
   return false;
 }
+console.log("ex3")
