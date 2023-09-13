@@ -6,15 +6,14 @@
     padding: 0;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.90rem;
 }
-li{
+
+li {
     display: inline;
 }
 
-
-
-.navigation{
+.navigation {
     background-color: black;
     display: flex;
     width: 100%;
@@ -22,25 +21,99 @@ li{
     height: 40px;
 }
 
-.navigation-list{
+.navigation-list {
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
 }
 
-#navigation-list-green{
+#navigation-list-green {
     background-color: green;
     height: 100%;
-}
-#navigation-list-green-content{
     display: flex;
-    justify-content: center;
-    height: 100%;
+    align-items: center;
 }
 
+.navigation-list li {
+    padding: 0 12px;
+}
+
+#navigation-list-green-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#navigation-list-green-content img {
+    height: 12px;
+    width: 12px;
+    margin-right: 6px;
+}
+
+.navigation-list-desktop {
+    display: none;
+}
+
+.navigation-list-mobile-dropdown {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation-list-mobile-dropdown img {
+    height: 18px;
+    width: 18px;
+    margin-right: 6px;
+}
+
+.navigation-list-mobile-dropdown img:hover {
+    cursor: pointer;
+}
+
+.navigation-list-mobile-dropdown-list {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 40px;
+    right: 2px;
+    z-index: 1;
+    width: 33%;
+}
+
+.navigation-list-mobile-dropdown-list li {
+    border: 1px solid;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+}
 
 @media (min-width: 640px) {
+    * {
+        font-size: 1rem;
+    }
 
+    .navigation-list {
+        justify-content: start;
+
+    }
+
+    #navigation-list-green-content img {
+        height: 15px;
+        width: 15px;
+        margin-right: 6px;
+    }
+
+    .navigation-list-desktop {
+        display: flex;
+    }
+
+    .navigation-list-mobile-dropdown {
+        display: none;
+    }
 }
