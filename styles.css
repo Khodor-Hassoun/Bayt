@@ -414,6 +414,11 @@ li {
     height: 50%;
 }
 
+/* JavaScript styles */
+.navigation-display-hide {
+    display: none;
+}
+
 /* Desktop Styles */
 @media (min-width: 640px) {
 
