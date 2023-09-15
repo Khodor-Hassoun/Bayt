@@ -27,7 +27,7 @@
             </ul>
             <div class="navigation-list-mobile-dropdown">
                 <img src="./Public/Images/icons8-lines-48.png" alt="menu" id="navigation-list-mobile-dropdown-button" />
-                <ul class="navigation-list-mobile-dropdown-list navigation-display">
+                <ul class="navigation-list-mobile-dropdown-list navigation-display-hide">
                     <li>Team</li>
                     <li>Work</li>
                     <li>Price</li>
@@ -195,13 +195,17 @@
                     <span>khodorhassoun26@gmail.com</span>
                 </div>
             </div>
-            <form class="section-contact-form">
-                <input class="section-contact-form-input" type="text" placeholder="Name">
-                <input class="section-contact-form-input" type="text" placeholder="Email">
-                <input class="section-contact-form-input" type="text" placeholder="Message">
+            <form class="section-contact-form" method="post">
+                <input class="section-contact-form-input" type="text" placeholder="Name"
+                    id="section-contact-form-input-name" name="name">
+                <input class="section-contact-form-input" type="text" placeholder="Email"
+                    id="section-contact-form-input-email" name="email">
+                <input class="section-contact-form-input" type="text" placeholder="Message"
+                    id="section-contact-form-input-message" name="message">
                 <div class="section-contact-form-input section-contact-form-container">
                     <label>
-                        <input type="checkbox" class="section-contact-form-checkbox">
+                        <input type="checkbox" class="section-contact-form-checkbox"
+                            id="section-contact-form-input-checkbox" name="checkbox">
                         I like it!
                     </label>
                     <button type="submit" class="section-contact-form-submit">Send</button>

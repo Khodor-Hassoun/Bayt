@@ -32,7 +32,7 @@ li {
 }
 
 #navigation-list-green {
-    background-color: green;
+    background-color: #009688;
     height: 100%;
     display: flex;
     align-items: center;
@@ -66,10 +66,15 @@ li {
     justify-content: center;
 }
 
+
 .navigation-list-mobile-dropdown img {
     height: 18px;
     width: 18px;
     margin-right: 6px;
+}
+
+.navigation-list-mobile-dropdown-button:hover {
+    filter: brightness(5);
 }
 
 .navigation-list-mobile-dropdown img:hover {
