@@ -39,3 +39,4 @@ contactForm.addEventListener("submit", (e) => {
   const formData = new FormData(contactForm);
   console.log(formData.get("checkbox") === "on");
 });
+console.log("Hello from web pack");
