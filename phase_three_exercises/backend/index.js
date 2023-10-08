@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -29,5 +28,4 @@ app.get("/work", (req, res) => {
 
 app.listen(3000, () => {
   console.log("app running on port 3000");
-  console.log(process.env.API_LINK);
 });
