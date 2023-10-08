@@ -1,3 +1,4 @@
+import axios from "axios";
 // Varaibles to add and remove the list on click
 const dropDownBtm = document.querySelector(
   "#navigation-list-mobile-dropdown-button"
@@ -39,4 +40,20 @@ contactForm.addEventListener("submit", (e) => {
   const formData = new FormData(contactForm);
   console.log(formData.get("checkbox") === "on");
 });
+
+// Phase 3 exercises
+axios
+  .get(process.env.API_LINK, {
+    headers: {
+      Accept: "text/xml",
+    },
+    responseType: "document",
+  })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((e) => {
+    console.log(e);
+  });
+
 console.log(process.env.API_LINK);
