@@ -83,7 +83,7 @@ async function readData() {
 
     const linkElement = document.createElement("a");
     linkElement.href = link;
-    linkElement.textContent = "Read more"; // You can customize the text
+    linkElement.textContent = "Desc";
 
     const descriptionElement = document.createElement("p");
     descriptionElement.textContent = description;
