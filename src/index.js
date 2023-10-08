@@ -42,18 +42,65 @@ contactForm.addEventListener("submit", (e) => {
 });
 
 // Phase 3 exercises
-axios
-  .get(process.env.API_LINK, {
-    headers: {
-      Accept: "text/xml",
-    },
-    responseType: "document",
-  })
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+const jobSection = document.querySelector(".section-jobs");
 
+async function getData() {
+  return axios
+    .get("http://localhost:3000/work", {
+      params: { format: "xml" },
+    })
+    .then((res) => {
+      // console.log(res.data);
+      return res.data;
+      // xmlDoc = parser.parseFromString(res.data, "text/xml");
+      // console.log(xmlDoc);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+}
+
+async function readData() {
+  const parser = new DOMParser();
+  const data = await getData();
+  const xmlDoc = parser.parseFromString(data, "text/xml");
+  console.log(xmlDoc);
+  const itemElements = xmlDoc.querySelectorAll("item");
+
+  itemElements.forEach((itemElement) => {
+    // Extract data from XML elements
+    const title = itemElement.querySelector("title").textContent;
+    const link = itemElement.querySelector("link").textContent;
+    const description = itemElement.querySelector("description").textContent;
+    const country = itemElement.querySelector("country").textContent;
+
+    // Create a div element to hold the item
+    const itemDiv = document.createElement("div");
+
+    // Create and populate elements for title, link, description, and country
+    const titleElement = document.createElement("h2");
+    titleElement.textContent = title;
+
+    const linkElement = document.createElement("a");
+    linkElement.href = link;
+    linkElement.textContent = "Read more"; // You can customize the text
+
+    const descriptionElement = document.createElement("p");
+    descriptionElement.textContent = description;
+
+    const countryElement = document.createElement("p");
+    countryElement.textContent = `Country: ${country}`;
+
+    // Append elements to the item div
+    itemDiv.appendChild(titleElement);
+    itemDiv.appendChild(linkElement);
+    // itemDiv.appendChild(descriptionElement);
+    itemDiv.appendChild(countryElement);
+
+    // Append the item div to the section
+    jobSection.appendChild(itemDiv);
+  });
+}
+
+readData();
 console.log(process.env.API_LINK);
